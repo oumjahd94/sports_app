@@ -1,0 +1,46 @@
+<div class="container spacer ">
+  <div class="panel panel-primary">
+    <div class="panel-heading">List of articles</div>
+    <div class="panel-body">
+      <div class="form-group">
+          <!-- une simple modification, concerne l'ajout de <br> seulement -->
+          <br>
+        <label>Saisissez un mot clé</label>
+        <input type="text" [(ngModel)]="motCle"/>
+        <button class="btn btn-primary" (click)="searchArticle()">Chercher</button>
+
+      </div>
+
+      <table class="table table-striped">
+
+        <tr>
+          <th>Id</th>
+          <th>Titre</th>
+          <th>Description</th>
+          <th>Edition</th>
+          <th>Suppression</th>
+
+        </tr>
+        <tr *ngFor="let a of ListeArticles?.content">
+          <td>{{a.id}}</td>
+          <td>{{a.titre}}</td>
+          <td>{{a.description}}</td>
+          <td>
+            <a (click)="EditArticle(a.id)" class="clickable">Editer</a>
+          </td>
+          <td>
+            <a (click)="OnDelete(a)" class="clickable">Supprimer</a>
+          </td>
+
+        </tr>
+      </table>
+
+      <div class="container">
+        <ul class="nav nav-pills">
+          <li [ngClass]="{active:i==page}" *ngFor="let p of pages; let i=index ">
+            <a (click)="gotoPage(i)" class="clickable">{{i}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

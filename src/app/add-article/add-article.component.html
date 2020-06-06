@@ -1,0 +1,32 @@
+
+<div class="container spacer">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Add an article</div>
+    <div>
+      <div class="panel-body">
+        <div>
+
+          <div class="form-group">
+
+            <label class="control-label">Titre : </label>
+            <input class="form-control" type="text" [(ngModel)]= "a.titre" required=""/>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Description : </label>
+            <input class="form-control" type="text" [(ngModel)]="a.description" required=""/>
+          </div>
+
+          <div class="form-group">
+
+            <label class="control-label">Photo : </label>
+            <input class="form-control" type="file" [(ngModel)]="a.photo" required=""/>
+          </div>
+
+          <button class="btn btn-primary" (click)="saveArticle()"> Enregistrer</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
